@@ -114,3 +114,7 @@ form button {
 	text-decoration: none !important;
 	cursor: pointer;
 }
+
+.hidden_form {
+	display: none;
+}

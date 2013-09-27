@@ -19,21 +19,21 @@
 			<div class="form-modal">
 
 				<nav>
-					<a href="#" class="active">Login</a>
-					<a href="#">Sign Up</a>
+					<a href="#" id="nav_login_button" class="active">Login</a>
+					<a href="#" id="nav_signup_button" class="">Sign Up</a>
 				</nav>
 
 				<div class="login-form">
 					<form class="signup">
 						<div class="form-row">
-							<label for="login-email-field">Email</label>
+							<label for="login-email-field" class="login">Email</label>
 							<input id="login-email-field" name="email" type="text" />
 						</div>
 						<div class="form-row">
 							<label for="login-password-field">Password</label>
 							<input id="login-password-field" name="password" type="password" />
 						</div>
-						<button>Log in</button>
+						<button id="login_button">Log in</button>
 					</form>
 				</div>
 
@@ -69,6 +69,7 @@
 
 		</div>
 		<script type="text/javascript" src="server.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 	</body>
 
 </html>
