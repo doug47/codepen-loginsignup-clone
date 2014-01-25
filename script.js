@@ -35,6 +35,13 @@ $('document').ready(function() {
 		password:""
 	};
 	
+	var signup_users = {
+		name:"",
+		email:"",
+		username:"", 
+		password:""
+	};
+
 	$('.signup-form').addClass("hidden_form");
 	
 
@@ -76,6 +83,39 @@ $('document').ready(function() {
 		if (server_check['success'] == true)
 		{
 			alert("You successfully logged into nothing!")
+		}
+		else
+		{
+			alert(server_check['error'])
+		}
+		return false;
+
+	})
+
+	$('#signup_button').on('click', function() 
+	{
+		signup_users['name'] = $('#signup-name-field').val();
+		signup_users['email'] = $('#signup-email-field').val();
+		signup_users['username'] = $('#signup-username-field').val();
+		console.log("Username:", signup_users.username);
+		
+		if ($('#signup-password-field').val() == $('#signup-password-field2').val())
+		{
+			signup_users['password'] = $('#signup-password-field').val();
+		}
+		else
+		{
+			alert("Your passwords don't match.");
+			signup_users['password'] = null;
+		}
+
+		console.log("Password:", signup_users.password);
+		
+		var server_check = codepen.api.signup(signup_users);
+
+		if (server_check['success'] == true)
+		{
+			alert("You successfully signed up!")
 		}
 		else
 		{
